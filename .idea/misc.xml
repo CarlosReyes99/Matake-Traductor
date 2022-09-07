@@ -3,7 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/desan/AndroidStudioProjects/HelloKotlin/app/src/main/res/layout/activity_main.xml" value="0.14" />
+        <entry key="..\:/Users/desan/AndroidStudioProjects/HelloKotlin/app/src/main/res/drawable/ic_chinese.xml" value="0.106" />
+        <entry key="..\:/Users/desan/AndroidStudioProjects/HelloKotlin/app/src/main/res/drawable/ic_french.xml" value="0.106" />
+        <entry key="..\:/Users/desan/AndroidStudioProjects/HelloKotlin/app/src/main/res/drawable/ic_icon_uk.xml" value="0.106" />
+        <entry key="..\:/Users/desan/AndroidStudioProjects/HelloKotlin/app/src/main/res/drawable/ic_italian.xml" value="0.106" />
+        <entry key="..\:/Users/desan/AndroidStudioProjects/HelloKotlin/app/src/main/res/layout/activity_main.xml" value="0.21" />
       </map>
     </option>
   </component>

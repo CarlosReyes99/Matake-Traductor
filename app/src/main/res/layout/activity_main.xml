@@ -1,31 +1,158 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center_horizontal"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/edt_play"
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/card_til"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/common_padding_default"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        >
+        <com.google.android.material.textfield.TextInputEditText
+
+            android:id="@+id/edt_play_esp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingresa una palabra"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_margin="@dimen/common_padding_default"
+        app:layout_constraintTop_toBottomOf="@id/card_til"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/btn_Play_eng"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Ingresa una palabra"
-        />
-    <Button
-        android:id="@+id/btn_Play"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Play"
+        android:drawableLeft="@drawable/ic_icon_uk"
+        android:text="English"
+        android:textColor="@color/black"
+
         />
 
+    <Button
+        android:layout_margin="@dimen/common_padding_default"
+        app:layout_constraintTop_toBottomOf="@id/btn_Play_eng"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/btn_Play_ch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:drawableLeft="@drawable/ic_chinese"
+        android:text="Chinese"
+        android:textColor="@color/black" />
+
+    <Button
+        android:layout_margin="@dimen/common_padding_default"
+        app:layout_constraintTop_toBottomOf="@id/btn_Play_ch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/btn_Play_kor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:drawableLeft="@drawable/ic_korean"
+        android:text="Korean"
+        android:textColor="@color/black" />
+
+    <Button
+        android:layout_margin="@dimen/common_padding_default"
+        app:layout_constraintTop_toBottomOf="@id/btn_Play_kor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/btn_Play_fr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:drawableLeft="@drawable/ic_french"
+        android:text="French"
+        android:textColor="@color/black" />
+
+    <Button
+        android:layout_margin="@dimen/common_padding_default"
+        app:layout_constraintTop_toBottomOf="@id/btn_Play_fr"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/btn_Play_it"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:drawableLeft="@drawable/ic_italian"
+        android:text="Italian"
+        android:textColor="@color/black" />
+
+    <Button
+        android:layout_margin="@dimen/common_padding_default"
+        app:layout_constraintTop_toBottomOf="@id/btn_Play_it"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/btn_Play_jap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_japanese"
+        android:text="Japanese"
+        android:textColor="@color/black" />
+
+
+
     <TextView
+        android:layout_margin="@dimen/common_padding_default"
+        app:layout_constraintTop_toBottomOf="@id/btn_Play_jap"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello Kotlin!"
          />
 
-</LinearLayout>
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/textView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:strokeColor="@color/black"
+
+
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <Button
+            android:layout_gravity="center"
+            android:drawableLeft="@drawable/ic_github"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+
+            />
+        <Button
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_facebook"
+            android:text="Facebook"/>
+
+        <Button
+            android:drawableLeft="@drawable/ic_thanks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MrX"/>
+
+
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
