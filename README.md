@@ -1,5 +1,5 @@
 <h1 align="center">Hola 👋, soy Carlos Reyes</h1>
-<h3 align="center">Soy un desarrollador entusiasta que está experimentando en el mundo de Android. Hice esta app muy básica para traducir de Español a los 6 idiomas más usados del mundo</h3>
+<h3 align="center">Soy un desarrollador entusiasta que está experimentando en el mundo de Android. Hice esta app muy básica para traducir de Español a los 6 idiomas más usados del mundo (Inglés UK, Chino, Coreano, Francés, Italiano, Japonés).</h3>
 
 
 
