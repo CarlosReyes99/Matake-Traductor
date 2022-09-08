@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.speech.tts.TextToSpeech
 
 import android.util.Log
+import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import com.example.hellokotlin.databinding.ActivityMainBinding
@@ -15,8 +16,9 @@ import java.util.*
 
 class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     private lateinit var binding : ActivityMainBinding
-    var pruebasEdit: String = binding.edtPlayEsp.toString()
+    private lateinit var pruebasEdit: String
     var tts: TextToSpeech? = null
+    
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,7 +33,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
         //button english
         binding.btnPlayEng.setOnClickListener {
-
+            pruebasEdit = binding.edtPlayEsp.text.toString()
 
             Log.i("mensaje: ", pruebasEdit)
 
@@ -68,7 +70,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         //button chinese
         binding.btnPlayCh.setOnClickListener{
 
-
+            pruebasEdit = binding.edtPlayEsp.text.toString()
 
             Log.i("mensaje: ", pruebasEdit)
 
@@ -101,7 +103,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
         //button korean
         binding.btnPlayKor.setOnClickListener {
-
+            pruebasEdit = binding.edtPlayEsp.text.toString()
             Log.i("mensaje: ", pruebasEdit)
 
             val translationConfigs = TranslatorOptions.Builder()
@@ -133,7 +135,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
         //button french
         binding.btnPlayFr.setOnClickListener {
-
+            pruebasEdit = binding.edtPlayEsp.text.toString()
             Log.i("mensaje: ", pruebasEdit)
 
             val translationConfigs = TranslatorOptions.Builder()
@@ -165,7 +167,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
         //button italian
         binding.btnPlayIt.setOnClickListener {
-
+            pruebasEdit = binding.edtPlayEsp.text.toString()
             Log.i("mensaje: ", pruebasEdit)
 
             val translationConfigs = TranslatorOptions.Builder()
@@ -197,7 +199,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
         //button japanese
         binding.btnPlayJap.setOnClickListener {
-
+            pruebasEdit = binding.edtPlayEsp.text.toString()
             Log.i("mensaje: ", pruebasEdit)
 
             val translationConfigs = TranslatorOptions.Builder()
@@ -237,9 +239,14 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
     }
 
+    fun etSpeech(message: String): String{
+
+        return message
+    }
+
     fun speak(message: String) {
 
-        tts!!.speak(message.toString(), TextToSpeech.QUEUE_FLUSH, null, "")
+        tts!!.speak(message, TextToSpeech.QUEUE_FLUSH, null, "")
     }
 
     override fun onInit(status: Int) {
