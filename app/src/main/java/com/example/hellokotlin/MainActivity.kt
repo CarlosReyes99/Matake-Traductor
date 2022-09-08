@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.speech.tts.TextToSpeech
 
 import android.util.Log
-import android.widget.EditText
+
 import android.widget.TextView
 import android.widget.Toast
 import com.example.hellokotlin.databinding.ActivityMainBinding
@@ -17,7 +17,7 @@ import java.util.*
 class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     private lateinit var binding : ActivityMainBinding
     private lateinit var pruebasEdit: String
-    var tts: TextToSpeech? = null
+    private var tts: TextToSpeech? = null
     
 
 
@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                 .build()
 
             val translator = Translation.getClient(translationConfigs)
-            if (!pruebasEdit.isEmpty()) {
+            if (pruebasEdit.isNotEmpty()) {
                 translator.downloadModelIfNeeded()
                     .addOnSuccessListener {
                         Toast.makeText(this, "Download Successful", Toast.LENGTH_SHORT).show()
@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             }
             translator.translate(pruebasEdit)
                 .addOnSuccessListener {
-                    tts!!.setLanguage(Locale.UK)
+                    tts!!.language = Locale.UK
                     speak(it)
                 }
                 .addOnFailureListener {
@@ -80,7 +80,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                 .build()
 
             val translator = Translation.getClient(translationConfigs)
-            if (!pruebasEdit.isEmpty()) {
+            if (pruebasEdit.isNotEmpty()) {
                 translator.downloadModelIfNeeded()
                     .addOnSuccessListener {
                         Toast.makeText(this, "Download Successful", Toast.LENGTH_SHORT).show()
@@ -91,7 +91,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             }
             translator.translate(pruebasEdit)
                 .addOnSuccessListener {
-                    tts!!.setLanguage(Locale.CHINESE)
+                    tts!!.language = Locale.CHINESE
                     speak(it)
                 }
                 .addOnFailureListener {
@@ -112,7 +112,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                 .build()
 
             val translator = Translation.getClient(translationConfigs)
-            if (!pruebasEdit.isEmpty()) {
+            if (pruebasEdit.isNotEmpty()) {
                 translator.downloadModelIfNeeded()
                     .addOnSuccessListener {
                         Toast.makeText(this, "Download Successful", Toast.LENGTH_SHORT).show()
@@ -123,7 +123,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             }
             translator.translate(pruebasEdit)
                 .addOnSuccessListener {
-                    tts!!.setLanguage(Locale.KOREAN)
+                    tts!!.language = Locale.KOREAN
                     speak(it)
                 }
                 .addOnFailureListener {
@@ -144,7 +144,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                 .build()
 
             val translator = Translation.getClient(translationConfigs)
-            if (!pruebasEdit.isEmpty()) {
+            if (pruebasEdit.isNotEmpty()) {
                 translator.downloadModelIfNeeded()
                     .addOnSuccessListener {
                         Toast.makeText(this, "Download Successful", Toast.LENGTH_SHORT).show()
@@ -155,7 +155,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             }
             translator.translate(pruebasEdit)
                 .addOnSuccessListener {
-                    tts!!.setLanguage(Locale.FRENCH)
+                    tts!!.language = Locale.FRENCH
                     speak(it)
                 }
                 .addOnFailureListener {
@@ -176,7 +176,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                 .build()
 
             val translator = Translation.getClient(translationConfigs)
-            if (!pruebasEdit.isEmpty()) {
+            if (pruebasEdit.isNotEmpty()) {
                 translator.downloadModelIfNeeded()
                     .addOnSuccessListener {
                         Toast.makeText(this, "Download Successful", Toast.LENGTH_SHORT).show()
@@ -187,7 +187,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             }
             translator.translate(pruebasEdit)
                 .addOnSuccessListener {
-                    tts!!.setLanguage(Locale.ITALIAN)
+                    tts!!.language = Locale.ITALIAN
                     speak(it)
                 }
                 .addOnFailureListener {
@@ -208,7 +208,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                 .build()
 
             val translator = Translation.getClient(translationConfigs)
-            if (!pruebasEdit.isEmpty()) {
+            if (pruebasEdit.isNotEmpty()) {
                 translator.downloadModelIfNeeded()
                     .addOnSuccessListener {
                         Toast.makeText(this, "Download Successful", Toast.LENGTH_SHORT).show()
@@ -219,7 +219,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             }
             translator.translate(pruebasEdit)
                 .addOnSuccessListener {
-                    tts!!.setLanguage(Locale.JAPANESE)
+                    tts!!.language = Locale.JAPANESE
                     speak(it)
                 }
                 .addOnFailureListener {
@@ -239,23 +239,20 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
     }
 
-    fun etSpeech(message: String): String{
 
-        return message
-    }
 
-    fun speak(message: String) {
+    private fun speak(message: String) {
 
         tts!!.speak(message, TextToSpeech.QUEUE_FLUSH, null, "")
     }
 
     override fun onInit(status: Int) {
         if (status == TextToSpeech.SUCCESS) {
-            findViewById<TextView>(R.id.textView).text = "Sí se puede"
+            findViewById<TextView>(R.id.textView).text = getString(R.string.confirm_translate)
 
 
         }else{
-            findViewById<TextView>(R.id.textView).text = "No se puede"
+            findViewById<TextView>(R.id.textView).text = getString(R.string.not_confirm_translate)
         }
 
     }

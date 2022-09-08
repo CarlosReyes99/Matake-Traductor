@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">Hello Kotlin</string>
+    <string name="app_name">Traductor Six</string>
+    <string name="confirm_translate">Sí se puede traducir en el dispositivo</string>
+    <string name="not_confirm_translate">No se puede traducir en el dispositivo</string>
 </resources>
